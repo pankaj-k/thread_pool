@@ -1,8 +1,8 @@
 thread_pool
 ===========
 
-This is a Thread Pool Library I created on Linux using POSIX threads.
-To keep it simple, It creates a user configured number of threads at the start of the library.
-The threads wait on the inout queue for the data to appear.
-The data when it comes is consumed and the output is put on the output queue.
-The threads use pthread_cond_wait and pthread_mutex facilities rather extensively.
+This is an early prototype of a thread pool library I had written using POSIX threads on Linux.
+It implements a worker pool model where workers wait for work to appear on the input queue. 
+As soon as the work comes the worked crew pick up the job and once done put the result on output queue.
+And start waiting for the work again.
+
